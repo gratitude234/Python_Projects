@@ -1,0 +1,25 @@
+while True:
+  num1 = float(input("Enter your first number: "))
+  num2 = float(input("Enter your second number: "))
+  operator = input("Enter your operator(+, -, *, /) ")
+  if operator == "+":
+    result = num1 + num2
+  elif operator == "-":
+    result = num1 - num2
+  elif operator == "*":
+    result = num1 * num2
+  elif operator == "/":
+    if num2 == 0:
+      print("Cannot divide by zero")
+      continue
+    else:
+      result = num1 / num2
+  else:
+    print("invalid input")
+    continue
+  print(result)
+  prompt = input("Do you want to perform another calculation? (yes/no)")
+  if prompt.lower() == "no":
+    print ("Thanks for using my simple calculator")
+    break
+
