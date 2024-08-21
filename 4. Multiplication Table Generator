@@ -1,0 +1,26 @@
+while True:
+  user_number = input("Enter a number to generate its multiplication table (or type 'exit' to quit): ").lower()
+
+  if user_number == "exit":
+    print("Exiting the program. Goodbye!")
+    break
+
+  try:
+    number = int(user_number)
+  except ValueError:
+    print("Please enter a valid number or type 'exit' to quit.")
+    continue
+
+  for i in range(1, 13):
+    result = number * i
+    print(f"{number} * {i} = {result}")
+
+  Prompt = input("Would you like to generate another table? (yes/no): ").lower()
+  if Prompt == "yes":
+    continue
+  elif Prompt == "no":
+    break
+  else:
+    print("invalid input")
+    break
+
