@@ -1,0 +1,34 @@
+# Initialize the Candidates
+candidates = ["Alice", "Bob", "Charlie"]
+votes = {candidate: 0 for candidate in candidates}
+
+# Set the Number of Voters
+num_voters = int(input("Enter the total number of voters: "))
+
+# Voting Process
+for i in range(1, num_voters + 1):
+    # Display the list of candidates with their corresponding indices
+    print("\nCandidates:")
+    for index, candidate in enumerate(candidates, start=1):
+        print(f"{index}. {candidate}")
+    
+    # Prompt the voter to enter the index of the candidate they want to vote for
+    vote_index = int(input(f"\nVoter {i}, enter the number corresponding to your chosen candidate: "))
+    
+    # Check if the input corresponds to a valid candidate index
+    if 1 <= vote_index <= len(candidates):
+        selected_candidate = candidates[vote_index - 1]
+        votes[selected_candidate] += 1
+    else:
+        # Print an error message and prompt the voter to enter a valid option
+        print("Invalid choice! Please enter a number corresponding to one of the candidates.")
+        vote_index = int(input(f"Voter {i}, enter the number corresponding to your chosen candidate: "))
+        selected_candidate = candidates[vote_index - 1]
+        votes[selected_candidate] += 1
+
+# Determine the Winner
+winner = max(votes, key=votes.get)
+
+# Display the Results
+print("\nElection Results:")
+print(f"The winner is {winner} with {votes[winner]} votes!")
