@@ -1,0 +1,28 @@
+
+while True:
+  user_number = input("Enter a number or type exit to leave: ")
+
+  if user_number.lower() == "exit":
+    break
+  
+  try:
+    number = int(user_number)
+  except ValueError:
+    print("Invalid number")
+    continue
+
+  if number < 2:
+    print("Not a prime number")    
+  elif number == 2:
+    print("A prime number")
+  else:
+    for i in range(2, int(number**0.5) + 1):
+      if number % i == 0:
+        print("Not a prime number")
+        is_prime = False
+        break
+      else:
+        is_prime = True
+    if is_prime:
+      print("A prime number")
+        
