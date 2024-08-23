@@ -1,0 +1,29 @@
+a = 0
+b = 1
+fibonacci_sequence = []
+User_Input = input("Enter the number of terms you want in the Fibonacci sequence: ")
+
+try:
+  num_terms = int(User_Input)
+  if num_terms <= 0:
+    print("Invalid input") 
+
+  if num_terms == 1:
+    fibonacci_sequence.append(a)
+    print(fibonacci_sequence)
+
+
+  if num_terms > 1:
+    fibonacci_sequence.append(a)
+    fibonacci_sequence.append(b)
+    for i in range(2, num_terms):
+      next_term = a + b
+      fibonacci_sequence.append(next_term)
+      a = b 
+      b = next_term
+      print(fibonacci_sequence )
+except ValueError:
+  print("Invalid Number")
+  exit()
+
+
